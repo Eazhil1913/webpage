@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDR | Road Features Database</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="logo">EDR Continuous & Information<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#departments">Departments</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#metrics">Impact</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#about" class="btn-secondary" style="text-decoration:none;">Contact</a>
+            <a href="#portal" class="btn-primary pulse" style="text-decoration:none;">Access Portal</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header id="home" class="hero">
+            <div class="hero-content">
+                <span class="badge glass">Road Features Database Project</span>
+                <h1 style="font-size: 3.5rem;">Mapping the Future of<br><span class="gradient-text">Infrastructure</span></h1>
+                <p>Comprehensive and intelligent road features database for seamless planning, management, and continuous information tracking by EDR Pvt. Ltd. <strong>Optimized for Hands-Free & Autonomous Vehicles.</strong></p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn-primary" style="text-decoration:none; display:inline-flex; align-items:center;">Explore Database</a>
+                    <a href="#features" class="btn-secondary" style="text-decoration:none; display:inline-flex; align-items:center;">View Documentation</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glass-card main-card">
+                    <div class="card-header">
+                        <div class="dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Autonomous Ready</h3>
+                        <p>High-definition mapping and continuous updates designed specifically to support hands-free vehicle navigation systems.</p>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card floating-card card-1">
+                    <h4>Data Accuracy</h4>
+                    <p class="score">99.9%</p>
+                </div>
+                <div class="glass-card floating-card card-2">
+                    <h4>Coverage</h4>
+                    <p class="score">Global</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products-section">
+            <div class="products-container glass-panel">
+                <div class="products-header">
+                    <h2>PRODUCTS AND SERVICES</h2>
+                    <p><strong>Interactive map:</strong> Map layers can be toggled on and off.</p>
+                </div>
+
+                <!-- Hands-Free Vehicle Feature Box -->
+                <div class="autonomous-feature glass">
+                    <div class="auto-icon">
+                        <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                    </div>
+                    <div class="auto-text">
+                        <h3>Hands-Free Vehicle Infrastructure</h3>
+                        <p>Our HD mapping database is the foundational layer for <strong>Autonomous & Hands-Free driving systems</strong>. We provide centimeter-level accuracy, real-time lane boundary updates, and comprehensive semantic metadata required for next-generation vehicle navigation.</p>
+                    </div>
+                </div>
+                
+                <div class="map-wrapper">
+                    <!-- Stylized Map Background -->
+                    <div class="map-bg">
+                        <!-- We'll use CSS to create a roadmap-like pattern or embed an iframe -->
+                        <iframe class="map-iframe" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-180.0%2C-85.0%2C180.0%2C85.0&amp;layer=mapnik" style="filter: hue-rotate(180deg) invert(90%) contrast(80%); opacity: 0.8; pointer-events: auto;"></iframe>
+                    </div>
+
+                    <!-- Layer Toggles -->
+                    <div class="map-layers">
+                        <button class="layer-btn active">Motorway</button>
+                        <button class="layer-btn active">Trunk</button>
+                        <button class="layer-btn active">Primary</button>
+                        <button class="layer-btn active">Secondary</button>
+                    </div>
+
+                    <!-- Vertical Regions Panel -->
+                    <div class="regions-panel">
+                        <div class="region-item active" data-bbox="-125.0,25.0,-65.0,50.0">
+                            <div class="region-icon">US</div>
+                            <span>North America</span>
+                        </div>
+                        <div class="region-item" data-bbox="-10.0,35.0,40.0,70.0">
+                            <div class="region-icon">EU</div>
+                            <span>Europe</span>
+                        </div>
+                        <div class="region-item" data-bbox="128.0,30.0,146.0,46.0">
+                            <div class="region-icon">JP</div>
+                            <span>Japan</span>
+                        </div>
+                        <div class="region-item" data-bbox="124.0,33.0,132.0,39.0">
+                            <div class="region-icon">KR</div>
+                            <span>South Korea</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="features-container">
+                <div class="section-header text-center">
+                    <span class="badge glass">Database Capabilities</span>
+                    <h2>Advanced Road Features</h2>
+                    <p class="section-subtitle">Powering the next generation of infrastructure and autonomous mobility with unprecedented detail and accuracy.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-box glass">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>HD Mapping</h3>
+                        <p>Centimeter-level accuracy of road geometry, lanes, and boundaries for precise navigation and planning.</p>
+                    </div>
+                    <div class="feature-box glass">
+                        <div class="feature-icon">📡</div>
+                        <h3>Live Telemetry</h3>
+                        <p>Continuous integration of real-time road condition data, traffic flow, and dynamic obstacles.</p>
+                    </div>
+                    <div class="feature-box glass">
+                        <div class="feature-icon">🏷️</div>
+                        <h3>Semantic Metadata</h3>
+                        <p>Detailed classification of road signs, markings, traffic lights, and pedestrian zones for AI models.</p>
+                    </div>
+                    <div class="feature-box glass">
+                        <div class="feature-icon">🚗</div>
+                        <h3>Autonomous Ready</h3>
+                        <p>Built specifically to support Level 3, 4, and 5 hands-free and autonomous driving systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Departments Section -->
+        <section id="departments" class="departments-section">
+            <div class="departments-container">
+                <div class="section-header text-center">
+                    <span class="badge glass" style="color: #8b5cf6; border-color: rgba(139, 92, 246, 0.3);">Our Divisions</span>
+                    <h2>Company Departments</h2>
+                    <p class="section-subtitle">Specialized teams handling every aspect of mapping, analysis, and data engineering.</p>
+                </div>
+                
+                <div class="departments-grid">
+                    <div class="dept-card glass">
+                        <div class="dept-icon">🛣️</div>
+                        <h3>Road Feature Database</h3>
+                        <p>Handling large-scale infrastructure mapping specifically for road and traffic features.</p>
+                    </div>
+                    <div class="dept-card glass">
+                        <div class="dept-icon">📡</div>
+                        <h3>LiDAR</h3>
+                        <p>Processing complex 3D point cloud data generated by advanced laser scanning systems.</p>
+                    </div>
+                    <div class="dept-card glass">
+                        <div class="dept-icon">🛰️</div>
+                        <h3>Ortho</h3>
+                        <p>Creating highly accurate, geometrically corrected aerial imagery and orthophotos.</p>
+                    </div>
+                    <div class="dept-card glass">
+                        <div class="dept-icon">📐</div>
+                        <h3>Photogrammetry</h3>
+                        <p>Extracting precise 3D measurements and modeling from 2D photographic images.</p>
+                    </div>
+                    <div class="dept-card glass">
+                        <div class="dept-icon">🌊</div>
+                        <h3>Sea To Sea</h3>
+                        <p>Managing extensive coast-to-coast mapping and continental infrastructure database projects.</p>
+                    </div>
+                    <div class="dept-card glass">
+                        <div class="dept-icon">📊</div>
+                        <h3>Data Analysis</h3>
+                        <p>Providing deep analytical processing, quality assurance, and actionable insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Track Record / Metrics Section -->
+        <section id="metrics" class="metrics-section">
+            <div class="metrics-container glass">
+                <div class="metrics-header">
+                    <span class="badge glass" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);">Our Track Record</span>
+                    <h2>Proven Excellence</h2>
+                    <p class="section-subtitle">Delivering high-quality, continuous information on time and with absolute precision.</p>
+                </div>
+                
+                <div class="metrics-highlight">
+                    <div class="big-number">
+                        <span class="count">25,000+</span>
+                        <span class="unit">Miles</span>
+                    </div>
+                    <p class="metric-desc">Professionally completed on time and with exceptional quality parameters.</p>
+                </div>
+
+                <div class="completed-projects">
+                    <h3>Completed Projects</h3>
+                    <div class="projects-list">
+                        <span class="project-tag glass">CR 43</span>
+                        <span class="project-tag glass">CR 64</span>
+                        <span class="project-tag glass">Sk</span>
+                        <span class="project-tag glass">Mountain view</span>
+                        <span class="project-tag glass">B2</span>
+                        <span class="project-tag glass">Auto TM</span>
+                        <span class="project-tag glass">S2S</span>
+                        <span class="project-tag glass">CM Change Management</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers Section -->
+        <section id="careers" class="careers-section">
+            <div class="careers-container">
+                
+                <!-- Left Content Column -->
+                <div class="careers-content">
+                    <h2>We're creating the future</h2>
+                    <p>HD maps are an essential part of the self-driving and semi-autonomous driving world, making driving safer and providing a detailed look at the world around us. Because we are a small team, you have the opportunity to make an outsized impact on the world.</p>
+                    <p>We have a global mindset, with a focus on innovation and moving fast.</p>
+                    <p>We have careers available in engineering, software, GIS, management, sales and marketing, technical roles, and drivers.</p>
+                    <p>At EDR Continuous & Information Pvt. Ltd., we offer interesting work, performance-based opportunities for advancement, competitive compensation, and a first-rate benefits and incentive package.</p>
+                    
+                    <h3>BENEFITS</h3>
+                    <ul class="benefits-list">
+                        <li>Comprehensive healthcare benefits packages are available, which include medical, dental, vision, and employer contributions to the H.S.A.</li>
+                        <li>Company-paid group life insurance, accidental death, short-term disability, and long-term disability.</li>
+                        <li>Company 401(k) match with immediate vesting.</li>
+                        <li>Valuable resources and budgeting tools to boost employee's financial health including financial coaches, legal assistance, and mental health support.</li>
+                        <li>Hybrid work model with remote and in-office options with flexible scheduling.</li>
+                    </ul>
+                </div>
+
+                <!-- Right Visual Column (Photos) -->
+                <div class="careers-visual">
+                    <div class="photo-collage">
+                        <!-- We will use placeholder image services or CSS to create the polaroid photo look -->
+                        <div class="polaroid p1">
+                            <div class="photo-img photo-bg-1"></div>
+                        </div>
+                        <div class="polaroid p2">
+                            <div class="photo-img photo-bg-2"></div>
+                        </div>
+                        <div class="polaroid p3">
+                            <div class="photo-img photo-bg-3"></div>
+                        </div>
+                        <div class="polaroid p4">
+                            <div class="photo-img photo-bg-4"></div>
+                        </div>
+                        <div class="polaroid p5">
+                            <div class="photo-img photo-bg-5"></div>
+                        </div>
+                        <div class="polaroid p6">
+                            <div class="photo-img photo-bg-6"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Us / Why EDR Section -->
+        <section id="about" class="about-section">
+            <div class="about-container glass">
+                <div class="about-header">
+                    <span class="badge glass" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3);">About Us</span>
+                    <h2>EDR Continuous Information</h2>
+                </div>
+                <div class="about-content">
+                    <p class="lead-text">We can help you focus on your core competence and become more efficient by providing complete, customized outsourcing solutions for your critical processes. We are able to bring local presence, global resources, and exceptional value to your doorstep with complete confidence.</p>
+                    <p>In today’s global market, you must use all your resources wisely to remain competitive, grow revenue and maximize profits. This requires that you focus on your core activities and seriously consider outsourcing those tasks that are non-core yet critical to your success. With resources in India, EDR is uniquely qualified to help your business reach its highest potential through successful outsourcing.</p>
+                    
+                    <h3 style="color: white; margin: 3rem 0 1.5rem; text-align: left;">Why EDR? Global Resources At Your Command</h3>
+                    
+                    <div class="why-grid">
+                        <div class="why-item glass">
+                            <h4>🛡️ Data Security</h4>
+                            <p>We understand the gravity of keeping your data safe. Strict IT and data security measures ensure protection.</p>
+                        </div>
+                        <div class="why-item glass">
+                            <h4>⏱️ On Time, Every Time</h4>
+                            <p>Fast turnaround times and quick responses to short-term surges in throughput needs.</p>
+                        </div>
+                        <div class="why-item glass">
+                            <h4>💰 Substantial Savings</h4>
+                            <p>Attractive labor rates and latest technology offer cost-effective solutions.</p>
+                        </div>
+                        <div class="why-item glass">
+                            <h4>🤝 Deal Direct</h4>
+                            <p>No middlemen. When you partner with us, EDR employees execute your project directly.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info mt-4">
+                        <h4><strong>EDR Continuous Information Pvt Ltd</strong></h4>
+                        <p><strong>Address:</strong> Arulayiammanpet, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Access Portal Section -->
+        <section id="portal" class="portal-section">
+            <div class="portal-container glass">
+                <div class="portal-content text-center">
+                    <span class="badge glass" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);">Secure Access</span>
+                    <h2>Client & Partner Portal</h2>
+                    <p style="margin-bottom: 2rem; color: var(--text-muted);">Log in to access your continuous information databases, live telemetry streams, and project analytics.</p>
+                    
+                    <form class="portal-form">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="name@company.com" class="glass-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="••••••••" class="glass-input">
+                        </div>
+                        <div class="form-options">
+                            <label class="remember"><input type="checkbox"> Remember me</label>
+                            <a href="#" class="forgot">Forgot password?</a>
+                        </div>
+                        <button type="button" class="btn-primary w-100" onclick="alert('Portal access is simulated for this demo.')">Secure Login</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 EDR Continuous Information Pvt. Ltd. All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
