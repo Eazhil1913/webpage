@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#333948",
+              "inverse-primary": "#005ac3",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#aec6ff",
+              "tertiary-container": "#3495ea",
+              "on-secondary": "#003822",
+              "on-error-container": "#ffdad6",
+              "primary": "#aec6ff",
+              "on-surface": "#dde2f5",
+              "on-tertiary-container": "#002b4d",
+              "tertiary-fixed-dim": "#9ecaff",
+              "surface-variant": "#2f3543",
+              "on-background": "#dde2f5",
+              "inverse-on-surface": "#2a303f",
+              "surface-dim": "#0d1320",
+              "on-primary": "#002e6a",
+              "on-primary-fixed": "#001a42",
+              "inverse-surface": "#dde2f5",
+              "on-primary-fixed-variant": "#004395",
+              "tertiary": "#9ecaff",
+              "surface-container-high": "#242a38",
+              "surface-container-low": "#161b29",
+              "surface-container": "#1a1f2d",
+              "on-secondary-fixed-variant": "#005233",
+              "on-tertiary-fixed": "#001d36",
+              "on-secondary-container": "#004027",
+              "on-tertiary": "#003258",
+              "tertiary-fixed": "#d1e4ff",
+              "outline-variant": "#424753",
+              "on-tertiary-fixed-variant": "#00497d",
+              "on-primary-container": "#00285d",
+              "background": "#0d1320",
+              "on-error": "#690005",
+              "error": "#ffb4ab",
+              "surface-tint": "#aec6ff",
+              "primary-container": "#4e8eff",
+              "primary-fixed": "#d8e2ff",
+              "on-surface-variant": "#c2c6d6",
+              "outline": "#8c909f",
+              "secondary-fixed": "#6dfcb5",
+              "secondary": "#4ddf9b",
+              "surface-container-highest": "#2f3543",
+              "surface-container-lowest": "#080e1b",
+              "on-secondary-fixed": "#002112",
+              "secondary-container": "#01b777",
+              "surface": "#0d1320",
+              "secondary-fixed-dim": "#4ddf9b"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(26, 31, 45, 0.7);
+            backdrop-filter: blur(16px);
+        }
+        .glow-border {
+            box-shadow: inset 0 0 0 1px rgba(174, 198, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0d1320]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] flex items-center justify-between px-8 py-4 max-w-full">
+<div class="text-xl font-black tracking-tighter text-[#aec6ff] uppercase">GeoEngine</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Inter'] tracking-tight font-medium text-sm text-slate-400 hover:text-white transition-colors" href="#">Global Fleet</a>
+<a class="font-['Inter'] tracking-tight font-medium text-sm text-slate-400 hover:text-white transition-colors" href="#">Telemetry</a>
+<a class="font-['Inter'] tracking-tight font-medium text-sm text-[#aec6ff] border-b-2 border-[#aec6ff] pb-1" href="#">Infrastructure</a>
+<a class="font-['Inter'] tracking-tight font-medium text-sm text-slate-400 hover:text-white transition-colors" href="#">Mission Control</a>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-medium text-sm scale-95 active:scale-90 transition-transform">
+            Access Portal
+        </button>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<header class="relative px-8 lg:px-24 py-20 overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
+<div class="w-full h-full bg-gradient-to-l from-primary/20 to-transparent"></div>
+</div>
+<div class="max-w-4xl relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-12 h-[1px] bg-secondary"></span>
+<span class="font-label text-xs tracking-[0.2em] text-secondary uppercase font-bold">Capabilities &amp; Architecture</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-headline font-black tracking-tight mb-8 leading-[1.1]">
+                    The Infrastructure <br/>
+<span class="text-primary">of Autonomy.</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                    GeoEngine provides the high-fidelity spatial data layer required for Level 4 and Level 5 autonomous systems. Our engine synchronizes HD mapping with real-time telemetry to create a living digital twin of global road networks.
+                </p>
+</div>
+</header>
+<!-- Technical Capabilities Bento Grid -->
+<section class="px-8 lg:px-24 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- HD Mapping Card -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low glow-border p-8 min-h-[400px]">
+<div class="absolute inset-0 z-0 opacity-40 group-hover:scale-105 transition-transform duration-700">
+<img class="w-full h-full object-cover grayscale brightness-50" data-alt="Technical top-down wireframe view of a complex highway interchange with glowing blue lines and data points" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8b-SH-RxI5btc6oiuk2a533DoR_hAxdn82tq0WdaPkImP2UaCbxV7NVlCuO7c11UcdKz4fumyInWPqLPGyQFugkfT3KFGpGHW51OLivGXJkR_FUWyM8vpY3lKZndOZOzlSK1F-Lgh9H9OGVIHObrqodBm8hyFgvgDrjw5VXOzDcIGNdtkwTYINWboeGxj08jxE80IFg0be9qQH2qmgvPPhMS1Xe-pB7xu51VZru6tqQ4aRlehnTEJCBg6B2IM8q7nMbMmdnXtqlIB"/>
+</div>
+<div class="relative z-10 h-full flex flex-col">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">map</span>
+<h3 class="text-2xl font-bold mb-4">Centimeter-Precision HD Mapping</h3>
+<p class="text-on-surface-variant max-w-md mb-8">
+                            High-definition maps built with sub-5cm accuracy. We utilize LiDAR point clouds and photogrammetry to map lane boundaries, vertical obstacles, and road signage.
+                        </p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] font-label tracking-widest uppercase rounded-full">LiDAR Fusion</span>
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] font-label tracking-widest uppercase rounded-full">Point-Cloud Mesh</span>
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] font-label tracking-widest uppercase rounded-full">Geo-Spatial RTK</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Card -->
+<div class="md:col-span-4 rounded-xl bg-surface-container-high glow-border p-8 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">sensors</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Live Telemetry</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Stream real-time diagnostics from millions of edge devices. Latency-optimized pipelines ensure mission-critical data arrives in &lt;20ms.
+                        </p>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex items-center justify-between text-xs font-label opacity-60">
+<span>NETWORK LOAD</span>
+<span class="text-secondary">OPTIMAL</span>
+</div>
+<div class="w-full h-1 bg-surface-variant overflow-hidden rounded-full">
+<div class="w-[75%] h-full bg-secondary"></div>
+</div>
+<div class="flex gap-4">
+<div class="flex-1 text-center py-3 bg-surface-container-low rounded-lg">
+<span class="block text-lg font-bold">1.2M</span>
+<span class="text-[10px] opacity-50">OPS/SEC</span>
+</div>
+<div class="flex-1 text-center py-3 bg-surface-container-low rounded-lg">
+<span class="block text-lg font-bold">14ms</span>
+<span class="text-[10px] opacity-50">LATENCY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Semantic Metadata -->
+<div class="md:col-span-5 rounded-xl bg-surface-container-low glow-border p-8">
+<span class="material-symbols-outlined text-tertiary mb-6">segment</span>
+<h3 class="text-xl font-bold mb-4">Semantic Metadata</h3>
+<p class="text-sm text-on-surface-variant mb-6">
+                        Beyond geometry, GeoEngine understands the rules of the road. We embed logic directly into the map layer, defining temporary closures, speed limits, and traffic flow vectors.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-xs">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+<span>Dynamic object classification at the edge.</span>
+</li>
+<li class="flex items-start gap-3 text-xs">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+<span>Temporal attribute tagging for road construction.</span>
+</li>
+</ul>
+</div>
+<!-- Global Infrastructure Map -->
+<div class="md:col-span-7 rounded-xl bg-surface-container-lowest overflow-hidden relative group">
+<div class="absolute inset-0 opacity-60">
+<img class="w-full h-full object-cover" data-alt="Digital globe visualization showing global connectivity nodes and data network lines glowing in neon blue over a dark surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYZ1z1thiL-NzZvVERxSkL_3hvwV0Rvh2Al1VCTbkuT1KavVYIxI-F6vuYc2IYgghfrYVuJxk2nKUZnlmRqt16JE5lxgQef0i_bMm3XIrBSIcffEWdLpag4S6MW7c6PB-ins_Y5CMu9ExP1Vcu-aVeagxkiDFWURisGb_eHWwHw-Iy-iVsdRg_7-bB5WZ6Paw-JvRy8-Lq3m6WXBAz7F4NTUPgO4KT-6w4F-m_tj4w6C28S8MzipiD5F_ge8kI34zljZtRww2TegQU"/>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/80 to-transparent">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-bold text-lg">Infrastructure Mesh</h4>
+<p class="text-xs text-on-surface-variant">Active nodes across 14 global regions.</p>
+</div>
+<button class="bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-lg text-xs font-bold transition-all">
+                                VIEW LIVE STATUS
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs Tonal Layering Section -->
+<section class="bg-surface-container-lowest py-24">
+<div class="px-8 lg:px-24">
+<div class="mb-16">
+<h2 class="text-3xl font-black tracking-tight mb-2">Engine Architecture</h2>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-widest">Protocol Version 4.8.2 // Stable</p>
+</div>
+<div class="space-y-4">
+<!-- Tech Spec Row 1 -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-surface hover:bg-surface-container-high transition-all duration-300 rounded-lg">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<span class="text-primary font-black text-xl opacity-20">01</span>
+<div>
+<h4 class="font-bold">Spatial Indexing</h4>
+<p class="text-xs text-on-surface-variant">Optimized H3 grid indexing for global scale queries.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 border border-outline-variant text-[10px] font-label uppercase">H3-LEVEL 12</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Tech Spec Row 2 -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-surface-container-low hover:bg-surface-container-high transition-all duration-300 rounded-lg">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<span class="text-primary font-black text-xl opacity-20">02</span>
+<div>
+<h4 class="font-bold">Edge Computation</h4>
+<p class="text-xs text-on-surface-variant">Local data filtering to minimize bandwidth egress.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 border border-outline-variant text-[10px] font-label uppercase">KUBE-EDGE</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Tech Spec Row 3 -->
+<div class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-surface hover:bg-surface-container-high transition-all duration-300 rounded-lg">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<span class="text-primary font-black text-xl opacity-20">03</span>
+<div>
+<h4 class="font-bold">Differential Updates</h4>
+<p class="text-xs text-on-surface-variant">Only sync changes to the map, reducing data consumption by 90%.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="px-3 py-1 border border-outline-variant text-[10px] font-label uppercase">DELTA-V2</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-8 lg:px-24 py-32 text-center">
+<div class="max-w-2xl mx-auto p-12 glass-panel rounded-2xl relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<h3 class="text-3xl font-bold mb-6">Ready to integrate?</h3>
+<p class="text-on-surface-variant mb-10 leading-relaxed">
+                    Deploy GeoEngine into your fleet today. Our SDK supports major autonomous platforms including ROS2, Apollo, and proprietary stacks.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold hover:brightness-110 transition-all">
+                        Request Documentation
+                    </button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-lg font-bold hover:bg-surface-bright transition-all">
+                        Contact Solutions Engineer
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 border-t border-[#2f3543]/20 bg-[#080e1b]">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-center w-full gap-8">
+<div class="flex flex-col gap-4">
+<div class="text-lg font-bold text-[#aec6ff]">GeoEngine</div>
+<p class="font-['Inter'] text-xs tracking-widest uppercase opacity-70 text-[#aec6ff]">
+                    © 2024 GeoEngine Systems. Precision Mapping &amp; Global Telemetry.
+                </p>
+</div>
+<div class="flex flex-wrap gap-6 lg:gap-12">
+<a class="text-slate-500 hover:text-[#aec6ff] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="#">Network Status</a>
+<a class="text-slate-500 hover:text-[#aec6ff] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="#">Documentation</a>
+<a class="text-slate-500 hover:text-[#aec6ff] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="#">Privacy Protocol</a>
+<a class="text-slate-500 hover:text-[#aec6ff] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="#">Security</a>
+<a class="text-slate-500 hover:text-[#aec6ff] transition-colors font-['Inter'] text-xs tracking-widest uppercase" href="#">API Support</a>
+</div>
+</div>
+</footer>
+</body></html>

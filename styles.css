@@ -107,19 +107,40 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
     font-weight: 800;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
+    flex: 1;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+.nav-logo {
+    height: 32px;
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
 }
 
 .logo span {
-    color: var(--primary);
+    font-weight: 800; /* Fully bold as requested */
+    opacity: 1;
+}
+
+.nav-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .nav-links {
@@ -724,12 +745,56 @@ body {
     background: rgba(15, 23, 42, 0.4);
     border: 1px solid rgba(139, 92, 246, 0.1);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Analysis video hover style */
+.dept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.dept-card:hover::before {
+    opacity: 1;
+}
+
+.dept-card .dept-icon, .dept-card h3, .dept-card p {
+    position: relative;
+    z-index: 1;
 }
 
 .dept-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(139, 92, 246, 0.5);
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(59, 130, 246, 0.8);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
+    background: rgba(30, 41, 59, 0.6);
+}
+
+.dept-card:hover .dept-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.dept-card:nth-child(6):hover {
+    /* Special "Analysis Scan" effect */
+    /* The general .dept-card:hover now handles background and transform */
+    /* Keeping the animation for the special effect */
+    animation: analysis-scan 2s linear infinite;
+}
+
+@keyframes analysis-scan {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
 }
 
 .dept-icon {

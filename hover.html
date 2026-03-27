@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Brute Force Word Hover</title>
+
+<style>
+
+body{
+    background:#0b0f1a;
+    color:#00ff9c;
+    font-family:monospace;
+    font-size:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+#word{
+    cursor:pointer;
+    letter-spacing:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="word">APPLE</div>
+
+<script>
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const wordElement = document.getElementById("word");
+const target = "APPLE";
+
+wordElement.addEventListener("mouseover", () => {
+
+let iteration = 0;
+
+const interval = setInterval(() => {
+
+wordElement.innerText = target
+.split("")
+.map((letter,index) => {
+
+if(index < iteration){
+return letter;
+}
+
+return letters[Math.floor(Math.random()*26)];
+
+})
+.join("");
+
+if(iteration >= target.length){
+clearInterval(interval);
+}
+
+iteration += 0.5;
+
+},40);
+
+});
+
+</script>
+
+</body>
+</html>

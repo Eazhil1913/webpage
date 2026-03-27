@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#333948",
+            "inverse-primary": "#005ac3",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#aec6ff",
+            "tertiary-container": "#3495ea",
+            "on-secondary": "#003822",
+            "on-error-container": "#ffdad6",
+            "primary": "#aec6ff",
+            "on-surface": "#dde2f5",
+            "on-tertiary-container": "#002b4d",
+            "tertiary-fixed-dim": "#9ecaff",
+            "surface-variant": "#2f3543",
+            "on-background": "#dde2f5",
+            "inverse-on-surface": "#2a303f",
+            "surface-dim": "#0d1320",
+            "on-primary": "#002e6a",
+            "on-primary-fixed": "#001a42",
+            "inverse-surface": "#dde2f5",
+            "on-primary-fixed-variant": "#004395",
+            "tertiary": "#9ecaff",
+            "surface-container-high": "#242a38",
+            "surface-container-low": "#161b29",
+            "surface-container": "#1a1f2d",
+            "on-secondary-fixed-variant": "#005233",
+            "on-tertiary-fixed": "#001d36",
+            "on-secondary-container": "#004027",
+            "on-tertiary": "#003258",
+            "tertiary-fixed": "#d1e4ff",
+            "outline-variant": "#424753",
+            "on-tertiary-fixed-variant": "#00497d",
+            "on-primary-container": "#00285d",
+            "background": "#0d1320",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "surface-tint": "#aec6ff",
+            "primary-container": "#4e8eff",
+            "primary-fixed": "#d8e2ff",
+            "on-surface-variant": "#c2c6d6",
+            "outline": "#8c909f",
+            "secondary-fixed": "#6dfcb5",
+            "secondary": "#4ddf9b",
+            "surface-container-highest": "#2f3543",
+            "surface-container-lowest": "#080e1b",
+            "on-secondary-fixed": "#002112",
+            "secondary-container": "#01b777",
+            "surface": "#0d1320",
+            "secondary-fixed-dim": "#4ddf9b"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-panel {
+      background: rgba(26, 31, 45, 0.7);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-gradient {
+      background: radial-gradient(circle at top right, rgba(174, 198, 255, 0.15), transparent 50%),
+        radial-gradient(circle at bottom left, rgba(77, 223, 155, 0.05), transparent 40%);
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+  <!-- Top Navigation Bar -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-[#0d1320]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] flex items-center justify-between px-8 py-4 max-w-full">
+    <div class="text-xl font-black tracking-tighter text-[#aec6ff] uppercase">GeoEngine</div>
+    <div class="hidden md:flex items-center space-x-8">
+      <a class="text-[#aec6ff] border-b-2 border-[#aec6ff] pb-1 font-['Inter'] tracking-tight font-medium text-sm"
+        href="#">Global Fleet</a>
+      <a class="text-slate-400 hover:text-white transition-colors font-['Inter'] tracking-tight font-medium text-sm"
+        href="#">Telemetry</a>
+      <a class="text-slate-400 hover:text-white transition-colors font-['Inter'] tracking-tight font-medium text-sm"
+        href="#">Infrastructure</a>
+      <a class="text-slate-400 hover:text-white transition-colors font-['Inter'] tracking-tight font-medium text-sm"
+        href="#">Mission Control</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <button
+        class="text-blue-200 dark:text-[#aec6ff] p-2 hover:bg-[#2f3543]/50 transition-all duration-300 rounded-lg">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button
+        class="bg-primary text-on-primary px-5 py-2 rounded-md font-['Inter'] text-sm font-bold tracking-tight scale-95 active:scale-90 transition-transform">
+        Access Portal
+      </button>
+    </div>
+  </nav>
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[921px] flex items-center px-8 hero-gradient overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-40">
+        <div
+          class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1545147986-a9d6f210df77?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center grayscale mix-blend-overlay"
+          data-alt="High-angle view of a futuristic smart city highway at night with light trails and blue digital overlays representing telemetry data flow">
+        </div>
+      </div>
+      <div class="relative z-10 max-w-5xl">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/20 border border-secondary/20 mb-8">
+          <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          <span class="text-secondary text-[10px] font-bold tracking-[0.2em] uppercase">System Live: v4.2
+            Deployment</span>
+        </div>
+        <h1 class="text-6xl md:text-8xl font-black tracking-[-0.04em] text-on-surface mb-6 leading-[0.9]">
+          Mapping the Future <br /> of <span class="text-primary">Infrastructure</span>
+        </h1>
+        <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-10 font-light">
+          Precision-engineered geospatial data for seamless urban planning and next-generation autonomous vehicle
+          support. Driving the standard for high-definition road networks.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button
+            class="bg-primary text-on-primary px-8 py-4 rounded-md font-bold text-lg flex items-center gap-3 hover:shadow-[0_0_20px_rgba(174,198,255,0.4)] transition-all">
+            Launch Dashboard
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+          <button
+            class="border border-outline-variant hover:bg-surface-container-highest/50 px-8 py-4 rounded-md font-bold text-lg transition-all">
+            View Global Fleet
+          </button>
+        </div>
+      </div>
+      <!-- Floating Data HUD -->
+      <div class="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 w-80 space-y-4">
+        <div class="glass-panel p-6 rounded-xl border border-outline-variant/10">
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-label-sm text-on-surface-variant uppercase tracking-widest text-[10px]">Real-time
+              Latency</span>
+            <span class="text-secondary font-mono text-sm">12ms</span>
+          </div>
+          <div class="h-24 flex items-end gap-1">
+            <div class="flex-1 bg-secondary/20 h-[40%] rounded-t-sm"></div>
+            <div class="flex-1 bg-secondary/40 h-[60%] rounded-t-sm"></div>
+            <div class="flex-1 bg-secondary h-[90%] rounded-t-sm"></div>
+            <div class="flex-1 bg-secondary/60 h-[50%] rounded-t-sm"></div>
+            <div class="flex-1 bg-secondary/30 h-[70%] rounded-t-sm"></div>
+          </div>
+        </div>
+        <div class="glass-panel p-6 rounded-xl border border-outline-variant/10">
+          <div class="text-label-sm text-on-surface-variant uppercase tracking-widest text-[10px] mb-2">Network Status
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary"
+              style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+            <span class="text-sm font-medium">Nodes Operating at Capacity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Products and Services: Interactive Map Layers -->
+    <section class="py-32 px-8 bg-surface-container-lowest">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 class="text-4xl font-bold mb-6 tracking-tight">Products and <span class="text-secondary">Services</span>
+            </h2>
+            <p class="text-on-surface-variant mb-12 text-lg">Our multi-layered geospatial engine provides modular
+              solutions for diverse infrastructure requirements, from raw LIDAR point clouds to semantic HD maps.</p>
+            <div class="space-y-6">
+              <div
+                class="p-6 rounded-xl bg-surface-container-high border-l-4 border-primary transition-all hover:translate-x-2 group cursor-pointer">
+                <div class="flex items-start gap-4">
+                  <div class="bg-primary/10 p-3 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">layers</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition-colors">Semantic Layering</h4>
+                    <p class="text-sm text-on-surface-variant">Intelligent object classification including road signs,
+                      lanes, and curbs.</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-6 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all hover:translate-x-2 group cursor-pointer">
+                <div class="flex items-start gap-4">
+                  <div class="bg-surface-variant p-3 rounded-lg text-on-surface-variant">
+                    <span class="material-symbols-outlined">route</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition-colors">Dynamic Trajectory Planning
+                    </h4>
+                    <p class="text-sm text-on-surface-variant">Real-time pathfinding optimized for autonomous navigation
+                      logic.</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-6 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all hover:translate-x-2 group cursor-pointer">
+                <div class="flex items-start gap-4">
+                  <div class="bg-surface-variant p-3 rounded-lg text-on-surface-variant">
+                    <span class="material-symbols-outlined">satellite_alt</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg group-hover:text-primary transition-colors">Telemetry Integration</h4>
+                    <p class="text-sm text-on-surface-variant">API-driven streams for live vehicle and infrastructure
+                      feedback loops.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative aspect-square">
+            <div class="absolute inset-0 bg-primary/5 rounded-3xl blur-3xl"></div>
+            <div class="relative h-full w-full rounded-3xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+              <img class="w-full h-full object-cover grayscale opacity-60"
+                data-alt="Close-up of a high-tech digital map showing glowing blue road networks and vector data overlays in a dark theme interface"
+                data-location="Tokyo"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ywjPYAEpFddLqGGMX8rBKDJ6LLLwd7YhhVfydY6qk6xJtrlCb2PdhIT0zmssl9jXNyhtD9S960NboPW0pq2pVseWcH6X6WAz3kDEe7xT8yFCRK2FTumI9JMU7npE1UAJrMnN2FlobfuLsbjUQGD2yDLEfcUv8SNE-9I1myiG0oovwmm8uLqdiR6peYdciK1-LFUb7R_r8n1m757MTTMA9RTvroEBTT5sLnHHYZUNz2uHpCLdEqxHu1uJPCeMBZ6IFGGL9DPC30Fc" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent">
+              </div>
+              <div class="absolute bottom-8 left-8 right-8 glass-panel p-6 rounded-xl border border-white/5">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="w-3 h-3 bg-secondary rounded-full animate-pulse"></span>
+                    <span class="text-sm font-bold tracking-tight">Active Layer: Vector HD Map</span>
+                  </div>
+                  <span class="text-xs text-on-surface-variant font-mono">51.5074° N, 0.1278° W</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Advanced Road Features: Bento Grid -->
+    <section class="py-32 px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <h2 class="text-4xl font-bold tracking-tight mb-4">Advanced Road <span class="text-primary">Features</span>
+            </h2>
+            <p class="text-on-surface-variant max-w-xl text-lg">Pushing the boundaries of what mapping can achieve
+              through high-fidelity telemetry and sub-centimeter accuracy.</p>
+          </div>
+          <a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all pb-1 border-b border-primary/20"
+            href="#">
+            Explore Full Technical Spec
+            <span class="material-symbols-outlined">trending_flat</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- HD Mapping -->
+          <div
+            class="md:col-span-2 bg-surface-container-low rounded-2xl overflow-hidden group border border-outline-variant/5">
+            <div class="h-64 relative overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 grayscale"
+                data-alt="Internal view of a sophisticated autonomous vehicle cockpit with multiple digital displays showing road environment data and lidar visualization"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxDPv_iDYG9_t6CuKq_9TjSU9Pjtk7TkYa7WRsn8TAC3EV3X51wy7BGJSvvUtqlnNm_g5t3yzMq7lGYOnAfvzrnAuwHHMuWBrGY8-yh2NbpCIPTYAHp4wqf06jwsA5klxA8kCwPlNBJdKMu48cuVWg27wt7o_O3c_KNmfvwR0iJw7e_MRqTHCR86aFzARyj04DrvDC90Lb92Pl1b969Fl8USw3z63hJCN5O-O-YIposAyIvVZ5HTTtwWWUFvbH5iOSSOBL5aypWHdP" />
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+              <div
+                class="absolute top-6 left-6 px-3 py-1 bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest rounded">
+                Core Tech</div>
+            </div>
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-4">HD Semantic Mapping</h3>
+              <p class="text-on-surface-variant leading-relaxed">Our proprietary mapping engine uses deep learning to
+                identify and classify road infrastructure with 99.9% accuracy. Every lane marking, pole, and traffic
+                light is a digital twin of its physical counterpart.</p>
+            </div>
+          </div>
+          <!-- Telemetry -->
+          <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/5 flex flex-col">
+            <div class="bg-tertiary/10 text-tertiary w-14 h-14 rounded-xl flex items-center justify-center mb-8">
+              <span class="material-symbols-outlined text-3xl">sensors</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Global Telemetry</h3>
+            <p class="text-on-surface-variant leading-relaxed flex-grow">Live data feeds from thousands of sensors
+              worldwide, providing real-time infrastructure health and occupancy monitoring.</p>
+            <div class="mt-8 pt-8 border-t border-outline-variant/10">
+              <div class="flex justify-between items-center text-sm font-mono text-tertiary">
+                <span>Uptime</span>
+                <span>99.998%</span>
+              </div>
+            </div>
+          </div>
+          <!-- Cloud Node -->
+          <div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/5 flex flex-col">
+            <div class="bg-secondary/10 text-secondary w-14 h-14 rounded-xl flex items-center justify-center mb-8">
+              <span class="material-symbols-outlined text-3xl">hub</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Distributed Mesh</h3>
+            <p class="text-on-surface-variant leading-relaxed">Decentralized data processing at the edge to ensure
+              low-latency response for critical autonomous navigation decisions.</p>
+          </div>
+          <!-- Precision -->
+          <div
+            class="md:col-span-2 bg-gradient-to-br from-surface-container-high to-surface-container-low rounded-2xl p-8 border border-outline-variant/5 flex items-center">
+            <div class="grid md:grid-cols-2 gap-12 w-full">
+              <div>
+                <h3 class="text-2xl font-bold mb-4">Sub-Centimeter Precision</h3>
+                <p class="text-on-surface-variant">Engineering mapping at the scale of centimeters to support Level 4
+                  and Level 5 autonomous systems across complex urban environments.</p>
+              </div>
+              <div class="flex items-center justify-center gap-8">
+                <div class="text-center">
+                  <div class="text-4xl font-black text-primary mb-1">0.8<span class="text-lg">cm</span></div>
+                  <div class="text-[10px] uppercase tracking-widest text-on-surface-variant">Abs Accuracy</div>
+                </div>
+                <div class="w-px h-12 bg-outline-variant/20"></div>
+                <div class="text-center">
+                  <div class="text-4xl font-black text-secondary mb-1">200<span class="text-lg">Hz</span></div>
+                  <div class="text-[10px] uppercase tracking-widest text-on-surface-variant">Refresh Rate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Company Departments -->
+    <section class="py-32 px-8 bg-surface-container">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold tracking-tight mb-4">Integrated <span class="text-primary">Ecosystem</span></h2>
+          <p class="text-on-surface-variant max-w-2xl mx-auto">Three core departments working in synergy to redefine the
+            boundaries of spatial data engineering.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-12">
+          <!-- LIDAR -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 rounded-full border-2 border-dashed border-primary/30 p-2 mb-8 flex items-center justify-center relative group">
+              <div
+                class="absolute inset-0 border-2 border-primary rounded-full animate-[spin_10s_linear_infinite] opacity-20">
+              </div>
+              <div
+                class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+                <span class="material-symbols-outlined text-4xl group-hover:text-on-primary"
+                  data-weight="fill">radar</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 uppercase tracking-widest">LIDAR Systems</h3>
+            <p class="text-on-surface-variant text-sm px-4">Terrestrial and aerial point cloud acquisition with
+              state-of-the-art solid-state laser technology.</p>
+          </div>
+          <!-- Ortho Mapping -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 rounded-full border-2 border-dashed border-secondary/30 p-2 mb-8 flex items-center justify-center relative group">
+              <div
+                class="absolute inset-0 border-2 border-secondary rounded-full animate-[spin_12s_linear_infinite_reverse] opacity-20">
+              </div>
+              <div
+                class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-secondary transition-all duration-500">
+                <span class="material-symbols-outlined text-4xl group-hover:text-on-secondary"
+                  data-weight="fill">grid_view</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 uppercase tracking-widest">Ortho Mapping</h3>
+            <p class="text-on-surface-variant text-sm px-4">Geo-rectified high-resolution aerial imagery providing a
+              top-down visual foundation for urban planning.</p>
+          </div>
+          <!-- Road Features -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="w-32 h-32 rounded-full border-2 border-dashed border-tertiary/30 p-2 mb-8 flex items-center justify-center relative group">
+              <div
+                class="absolute inset-0 border-2 border-tertiary rounded-full animate-[spin_8s_linear_infinite] opacity-20">
+              </div>
+              <div
+                class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-tertiary transition-all duration-500">
+                <span class="material-symbols-outlined text-4xl group-hover:text-on-tertiary"
+                  data-weight="fill">edit_road</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 uppercase tracking-widest">Road Features</h3>
+            <p class="text-on-surface-variant text-sm px-4">The semantic intelligence unit focusing on extraction and
+              classification of 450+ unique road asset types.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-32 px-8">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="bg-gradient-to-r from-primary/20 via-surface-container-highest to-background p-16 rounded-[2rem] border border-outline-variant/10 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+            <span class="material-symbols-outlined text-[30rem] absolute -top-20 -right-20">language</span>
+          </div>
+          <div class="relative z-10 max-w-2xl">
+            <h2 class="text-5xl font-black mb-6 leading-tight">Ready to integrate <br /> the future?</h2>
+            <p class="text-on-surface-variant text-lg mb-10">Access our secure portal to browse global telemetry sets or
+              request custom mapping deployments for your region.</p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-on-surface text-surface px-8 py-4 rounded-md font-bold text-lg hover:bg-primary hover:text-on-primary transition-all">
+                Request Pilot Program
+              </button>
+              <button class="text-primary font-bold px-8 py-4 flex items-center gap-2 hover:underline">
+                Talk to an Engineer
+                <span class="material-symbols-outlined">chat_bubble</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-[#080e1b] w-full py-12 px-8 border-t border-[#2f3543]/20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-center w-full gap-8">
+      <div class="space-y-4">
+        <div class="text-lg font-bold text-[#aec6ff]">GeoEngine</div>
+        <div class="font-['Inter'] text-xs tracking-widest uppercase opacity-70 text-slate-500">© 2024 GeoEngine
+          Systems. Precision Mapping &amp; Global Telemetry.</div>
+      </div>
+      <div class="flex flex-wrap gap-8">
+        <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-[#aec6ff] transition-colors"
+          href="#">Network Status</a>
+        <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-[#aec6ff] transition-colors"
+          href="#">Documentation</a>
+        <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-[#aec6ff] transition-colors"
+          href="#">Privacy Protocol</a>
+        <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-[#aec6ff] transition-colors"
+          href="#">Security</a>
+        <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-[#aec6ff] transition-colors"
+          href="#">API Support</a>
+      </div>
+      <div class="flex gap-4">
+        <span class="material-symbols-outlined text-[#aec6ff] opacity-100 hover:opacity-80 cursor-pointer">share</span>
+        <span
+          class="material-symbols-outlined text-[#aec6ff] opacity-100 hover:opacity-80 cursor-pointer">terminal</span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
