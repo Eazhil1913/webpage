@@ -124,19 +124,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const gotTheme = {
-        background: '#0d1713',
-        surface: '#17231d',
-        surfaceHigh: '#21372d',
-        surfaceLow: '#0f1a17',
-        primary: '#3d6a4d',
-        primaryGlow: '#6f8d5e',
-        secondary: '#d7b55b',
-        secondarySoft: '#f4df9a',
-        tertiary: '#8c3d31',
-        text: '#f4ead1',
-        textMuted: '#d7c5a0',
-        border: 'rgba(215, 181, 91, 0.32)',
-        shadow: 'rgba(0, 0, 0, 0.45)'
+        background: '#070b09',
+        surface: '#101a15',
+        surfaceHigh: '#1c2b24',
+        surfaceLow: '#070d0c',
+        primary: '#2f4b3b',
+        primaryGlow: '#6c8a5d',
+        secondary: '#d9b15f',
+        secondarySoft: '#f3d98d',
+        tertiary: '#7d2b24',
+        text: '#f6e8c9',
+        textMuted: '#d0bb8b',
+        border: 'rgba(217, 177, 95, 0.28)',
+        shadow: 'rgba(0, 0, 0, 0.52)'
     };
 
     document.documentElement.style.setProperty('--background', gotTheme.background);
@@ -172,10 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         body {
             background:
-                radial-gradient(circle at top left, rgba(92, 124, 76, 0.28), transparent 32%),
-                radial-gradient(circle at top right, rgba(215, 181, 91, 0.18), transparent 28%),
-                radial-gradient(circle at bottom left, rgba(140, 61, 49, 0.22), transparent 30%),
-                linear-gradient(135deg, #0b120e 0%, #111c17 35%, #17251e 100%);
+                radial-gradient(circle at 18% 12%, rgba(69, 97, 69, 0.28), transparent 26%),
+                radial-gradient(circle at 82% 20%, rgba(217, 177, 95, 0.14), transparent 24%),
+                radial-gradient(circle at 30% 85%, rgba(125, 43, 36, 0.18), transparent 28%),
+                linear-gradient(135deg, #060b09 0%, #0e1713 28%, #121d18 52%, #0a120f 100%);
             color: var(--text);
         }
 
@@ -252,28 +252,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         .border-primary, .border-primary\/30, .border-outline-variant, .border-white\/5 {
-            border-color: rgba(215, 181, 91, 0.32) !important;
+            border-color: rgba(217, 177, 95, 0.30) !important;
         }
 
         .glass-panel {
-            background: rgba(19, 28, 25, 0.78) !important;
-            border: 1px solid rgba(215, 181, 91, 0.28) !important;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.38) !important;
+            background: rgba(15, 21, 18, 0.8) !important;
+            border: 1px solid rgba(217, 177, 95, 0.24) !important;
+            box-shadow: 0 22px 42px rgba(0, 0, 0, 0.44) !important;
             backdrop-filter: blur(18px);
         }
 
         .hero-gradient {
             background:
-                radial-gradient(circle at top right, rgba(215, 181, 91, 0.18), transparent 38%),
-                radial-gradient(circle at bottom left, rgba(98, 142, 88, 0.16), transparent 32%),
-                linear-gradient(135deg, rgba(13, 23, 19, 0.9), rgba(17, 35, 28, 0.9));
+                radial-gradient(circle at top right, rgba(217, 177, 95, 0.16), transparent 34%),
+                radial-gradient(circle at bottom left, rgba(126, 155, 96, 0.12), transparent 28%),
+                linear-gradient(135deg, rgba(7, 11, 9, 0.9), rgba(18, 29, 24, 0.92));
         }
 
         nav,
         .bg-black\/60,
         footer {
-            background: rgba(11, 17, 14, 0.82) !important;
-            border-color: rgba(215, 181, 91, 0.18) !important;
+            background: rgba(7, 11, 9, 0.9) !important;
+            border-color: rgba(217, 177, 95, 0.18) !important;
         }
 
         .nav-hover-link:hover,
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .bg-secondary-container,
         .bg-primary\/10,
         .bg-secondary\/10 {
-            background-color: rgba(107, 141, 94, 0.18) !important;
+            background-color: rgba(107, 138, 93, 0.18) !important;
         }
 
         .text-secondary-container,
@@ -295,11 +295,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .bg-primary\/5,
         .bg-primary\/20,
         .bg-primary\/30 {
-            background-color: rgba(61, 106, 77, 0.18) !important;
+            background-color: rgba(47, 75, 59, 0.18) !important;
         }
 
         .shadow-\[0_8px_32px_0_rgba\(0\,0\,0\,0\.5\)\] {
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.42) !important;
         }
 
         .stock-line {
@@ -309,14 +309,13 @@ document.addEventListener('DOMContentLoaded', () => {
         .bg-primary\/5.rounded-3xl.blur-3xl,
         .bg-primary\/10,
         .bg-secondary\/10 {
-            filter: saturate(1.2);
+            filter: saturate(1.25);
         }
 
-        /* Extra Game of Thrones style polish */
         a.bg-primary,
         button.bg-primary,
         .bg-primary.text-on-primary {
-            box-shadow: 0 0 0 1px rgba(244, 234, 209, 0.16), 0 10px 24px rgba(61, 106, 77, 0.35);
+            box-shadow: 0 0 0 1px rgba(246, 232, 201, 0.1), 0 12px 26px rgba(47, 75, 59, 0.35);
         }
 
         .border-dashed {
